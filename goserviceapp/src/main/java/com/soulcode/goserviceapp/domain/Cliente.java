@@ -57,13 +57,17 @@ public class Cliente extends Usuario{
         this.dataNascimento = dataNascimento;
     }
 
+
     @Override
-    public int hashCode() {
-        return Objects.hash(telefone,cpf,dataNascimento);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(telefone, cliente.telefone) && Objects.equals(cpf, cliente.cpf) && Objects.equals(dataNascimento, cliente.dataNascimento);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), telefone, cpf, dataNascimento);
     }
 }

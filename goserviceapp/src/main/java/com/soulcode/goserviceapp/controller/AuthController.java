@@ -10,8 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AuthController {
 
     @GetMapping(value = "/login")
-
-public String login(){
+    public String login(){
         return "login";
     }
 
@@ -19,6 +18,11 @@ public String login(){
     public ModelAndView cadastro(){
         ModelAndView mv = new ModelAndView("cadastroCliente");
         return mv;
+    }
+
+    @GetMapping("/password/new")
+    public String alterarSenha(){
+        return "alterarSenha";
     }
 
 }
