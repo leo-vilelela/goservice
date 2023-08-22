@@ -8,8 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
         @RequestMapping(value = "/cliente")
 public class ClienteController {
 
-    @GetMapping
+    @GetMapping(value = "/dados")
     public String dados(){
         return "dadosCliente";
     }
+
+    @GetMapping(value = "/agendar")
+    public String agendar(){
+        return "agendarServico";
+    }
+
+
 }
